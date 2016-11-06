@@ -1,0 +1,13 @@
+<div ng-controller="ValetCtrl as valet">
+  <div class="parking-area">
+    <div class="parkings" ng-repeat="parking in valet.parkings track by $index">
+      <div class="parking">
+        <img ng-if="parking.active" src="img/car.png"></img>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <p>Status da conexão: {{valet.status}}</p>
+  </div>
+</div>
