@@ -1,0 +1,19 @@
+{
+    "pid": 4971, 
+    "options": {
+        "reactor": null, 
+        "loglevel": "info", 
+        "logtofile": false, 
+        "cbdir": "/Users/pedro/workspace/valet-app/server_side/server", 
+        "logformat": "standard", 
+        "command": "start", 
+        "logdir": null, 
+        "config": null, 
+        "colour": "auto", 
+        "personality": "community"
+    }, 
+    "argv": [
+        "/usr/local/bin/crossbar", 
+        "start"
+    ]
+}

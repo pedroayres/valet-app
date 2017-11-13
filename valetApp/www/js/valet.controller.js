@@ -8,7 +8,7 @@ function ValetCtrl($scope) {
   self.parkings = createParkings();
   self.status = 'Desconectado';
 
-  var serverIp = '192.168.1.32';
+  var serverIp = '192.168.0.106';
   var wsuri = 'ws://' + serverIp + ':1017/ws';
   var connection = new autobahn.Connection({
     url: wsuri,
@@ -42,7 +42,7 @@ function ValetCtrl($scope) {
         //self.status = 'Desconectado';
         //reloadWatches();
       }
-    }, 1000);
+    }, 500);
   };
 
   connection.open();
@@ -77,7 +77,13 @@ function ValetCtrl($scope) {
   function updateStatusPark(content) {
     content.forEach(function(parkStatus, index) {
       console.log(index);
-      self.parkings[index].active = parseInt(parkStatus);
+      if(index === 0) {
+        self.parkings[0].active = parseInt(parkStatus);
+      } else if(index === 1) {
+        self.parkings[4].active = parseInt(parkStatus);
+      } else if(index === 2) {
+        self.parkings[8].active = parseInt(parkStatus);
+      }
     });
   }
 }
